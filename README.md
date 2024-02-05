@@ -12,7 +12,7 @@ sudo make clean install
 ```
 
 ### Setup
-`xinitrc`:
+`~/.xinitrc`:
 ```bash
 feh --bg-file <aesthetic-wallpaper>
 
