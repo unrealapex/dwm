@@ -14,7 +14,7 @@ sudo make clean install
 ### Setup
 `~/.xinitrc`:
 ```bash
-feh --bg-file <aesthetic-wallpaper>
+feh --bg-fill <aesthetic-wallpaper>
 
 while true; do
    xsetroot -name "$( date +"%m/%d %I:%M %P" )"
