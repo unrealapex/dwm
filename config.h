@@ -127,23 +127,23 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	// my own keybinds
 	// lock
-	{ MODKEY|ShiftMask,             XK_x, spawn,         {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
 	// screenshot
-	{ ShiftMask,     0xff61,    spawn,         {.v = screenshot_full_cmd } },
-	{ 0,             0xff61,    spawn,         {.v = screenshot_select_cmd } },
+	{ ShiftMask,                    0xff61,    spawn,          {.v = screenshot_full_cmd } },
+	{ 0,                            0xff61,    spawn,          {.v = screenshot_select_cmd } },
 	// volume
-	{ 0,             XF86XK_AudioRaiseVolume, spawn,         {.v = volume_up_cmd } },
-	{ 0,             XF86XK_AudioLowerVolume, spawn,         {.v = volume_down_cmd } },
-	{ 0,             XF86XK_AudioMute, spawn,         {.v = volume_mute_cmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = volume_up_cmd } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = volume_down_cmd } },
+	{ 0,                            XF86XK_AudioMute, spawn,          {.v = volume_mute_cmd } },
 	// media control
-	{ 0,             XF86XK_AudioPlay, spawn,         {.v = media_play_cmd } },
-	{ 0,             XF86XK_AudioNext, spawn,         {.v = media_next_cmd } },
-	{ 0,             XF86XK_AudioPrev, spawn,         {.v = media_prev_cmd } },
+	{ 0,                            XF86XK_AudioPlay, spawn,          {.v = media_play_cmd } },
+	{ 0,                            XF86XK_AudioNext, spawn,          {.v = media_next_cmd } },
+	{ 0,                            XF86XK_AudioPrev, spawn,          {.v = media_prev_cmd } },
 	// brightness
-	{ 0,             XF86XK_MonBrightnessUp, spawn,         {.v = brightness_up_cmd } },
-	{ 0,             XF86XK_MonBrightnessDown, spawn,         {.v =  brightness_down_cmd } },
+	{ 0,                            XF86XK_MonBrightnessUp, spawn,         {.v = brightness_up_cmd } },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn,         {.v =  brightness_down_cmd } },
 	// mute mic
-	{ 0,             XF86XK_AudioMicMute, spawn,         {.v = mic_mute_cmd } },
+	{ 0,                            XF86XK_AudioMicMute, spawn,         {.v = mic_mute_cmd } },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
