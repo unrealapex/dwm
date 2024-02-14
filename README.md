@@ -2,7 +2,14 @@
 
 ### Patches
 - [gaps](https://dwm.suckless.org/patches/gaps/)
+- [swallow](https://dwm.suckless.org/patches/swallow/)
 - [switchtotag](https://dwm.suckless.org/patches/switchtotag/)
+- [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
+- [notitle](https://dwm.suckless.org/patches/notitle/)
+- [moveresize](https://dwm.suckless.org/patches/moveresize/)
+- [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
+- [pertag](https://dwm.suckless.org/patches/pertag/)
+
 
 ### Install
 ```bash

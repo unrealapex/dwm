@@ -4,6 +4,7 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 1;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
@@ -27,9 +28,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     switchtotag    isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,             1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,             0,           -1 },
+	/* class     instance     title     tags mask     switchtotag     isfloating     isterminal  noswallow  monitor */
+	{ "Gimp",    NULL,        NULL,     0,            0,               1,             0,          0,        -1 },
+	{ "Firefox", NULL,        NULL,     1 << 8,       0,               0,             0,         -1,        -1 },
+	{ "St",      NULL,        NULL,     0,            0,               0,             1,          0,        -1 },
+	 /* xev */
+	{ NULL,      NULL,        "Event Tester",0,       0,               0,             0,          1,        -1 }
 };
 
 /* layout(s) */
@@ -80,6 +84,23 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
+	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
+	{ MODKEY,                       XK_Right,  moveresize,     {.v = "25x 0y 0w 0h" } },
+	{ MODKEY,                       XK_Left,   moveresize,     {.v = "-25x 0y 0w 0h" } },
+	{ MODKEY|ShiftMask,             XK_Down,   moveresize,     {.v = "0x 0y 0w 25h" } },
+	{ MODKEY|ShiftMask,             XK_Up,     moveresize,     {.v = "0x 0y 0w -25h" } },
+	{ MODKEY|ShiftMask,             XK_Right,  moveresize,     {.v = "0x 0y 25w 0h" } },
+	{ MODKEY|ShiftMask,             XK_Left,   moveresize,     {.v = "0x 0y -25w 0h" } },
+	{ MODKEY|ControlMask,           XK_Up,     moveresizeedge, {.v = "t"} },
+	{ MODKEY|ControlMask,           XK_Down,   moveresizeedge, {.v = "b"} },
+	{ MODKEY|ControlMask,           XK_Left,   moveresizeedge, {.v = "l"} },
+	{ MODKEY|ControlMask,           XK_Right,  moveresizeedge, {.v = "r"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Up,     moveresizeedge, {.v = "T"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Down,   moveresizeedge, {.v = "B"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Left,   moveresizeedge, {.v = "L"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -104,7 +125,6 @@ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
