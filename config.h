@@ -93,8 +93,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "application-launcher", NULL };
-static const char *termcmd[]  = { "wezterm", NULL };
-static const char *lockcmd[]  = { "betterlockscreen", "--lock", NULL };
+static const char *termcmd[]  = { "st", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 // FIXME: figure out c naming scheme
 static const char *screenshot_full_cmd[]  = { "screenshot", "full", NULL };
 static const char *screenshot_select_cmd[]  = { "screenshot", "selection", NULL };
