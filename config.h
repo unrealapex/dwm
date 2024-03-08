@@ -58,9 +58,9 @@ static const Rule rules[] = {
 	{ "firefox",  "Toolkit",  "Picture-in-Picture", ~0,  0,              1,             0,         -1,         -1 },
 	{ "Google-chrome",  NULL, NULL,       1 << 1,       1,              0,             0,         -1,         -1 },
 	{ "Element",  NULL,       NULL,       1 << 2,       1,              1,             0,          0,         -1 },
-	{ "obsidian",  NULL,      NULL,       1 << 3,       1,              1,             0,          0,         -1 },
+	{ "obsidian", NULL,       NULL,       1 << 3,       1,              1,             0,          0,         -1 },
 	{ "steam",    NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
-	{ "Lutris",    NULL,       NULL,      1 << 4,       1,              1,             0,          0,         -1 },
+	{ "Lutris",   NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
 	{ "nuclear",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
 };
@@ -105,6 +105,7 @@ static const char *volume_mute_cmd[]  = { "volumewizard", "mute", NULL };
 static const char *media_play_cmd[] = {"playerctl", "play-pause", NULL};
 static const char *media_next_cmd[] = {"playerctl", "next", NULL};
 static const char *media_prev_cmd[] = {"playerctl", "previous", NULL};
+// FIXME: this this
 static const char *brightness_up_cmd[] = {"brightnessctl", "set", "+15%", NULL};
 static const char *brightness_down_cmd[] = {"brightnessctl", "set", "-15%", NULL};
 static const char *mic_mute_cmd[] = {"pactl", "set-source-mute", "toggle", NULL};
