@@ -9,6 +9,7 @@
 - [pertag](https://dwm.suckless.org/patches/pertag/)
 - [swallow](https://dwm.suckless.org/patches/swallow/)
 - [switchtotag](https://dwm.suckless.org/patches/switchtotag/)
+- [windowmap](https://dwm.suckless.org/patches/windowmap/)
 
 ### Install
 ```bash
