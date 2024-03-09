@@ -10,6 +10,7 @@
 - [swallow](https://dwm.suckless.org/patches/swallow/)
 - [switchtotag](https://dwm.suckless.org/patches/switchtotag/)
 - [windowmap](https://dwm.suckless.org/patches/windowmap/)
+- [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
 
 ### Install
 ```bash
