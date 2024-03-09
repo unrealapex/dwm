@@ -10,6 +10,7 @@
 - [switchtotag](https://dwm.suckless.org/patches/switchtotag/)
 - [windowmap](https://dwm.suckless.org/patches/windowmap/)
 - [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
+- [smartborders](https://dwm.suckless.org/patches/smartborders/)
 
 ### Install
 ```bash
