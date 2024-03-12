@@ -3,7 +3,6 @@
 ### Patches
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
-- [gaps](https://dwm.suckless.org/patches/gaps/)
 - [moveresize](https://dwm.suckless.org/patches/moveresize/)
 - [notitle](https://dwm.suckless.org/patches/notitle/)
 - [pertag](https://dwm.suckless.org/patches/pertag/)
