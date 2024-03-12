@@ -11,6 +11,7 @@
 - [windowmap](https://dwm.suckless.org/patches/windowmap/)
 - [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
 - [smartborders](https://dwm.suckless.org/patches/smartborders/)
+- [tilegap](https://dwm.suckless.org/patches/tilegap/)
 
 ### Install
 ```bash
