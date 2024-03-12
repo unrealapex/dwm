@@ -1947,17 +1947,12 @@ tagmon(const Arg *arg)
 
 void
 tile(Monitor *m) {
-	unsigned int i, n, h, mw, my, ty, bw;
+	unsigned int i, n, h, mw, my, ty;
 	Client *c;
 
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)
 		return;
-
-	if (n == 1)
-		bw = 0;
-	else
-		bw = borderpx;
 
 	if(n > m->nmaster)
 		mw = m->nmaster ? m->ww * m->mfact : 0;
@@ -1966,19 +1961,14 @@ tile(Monitor *m) {
 	for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if(i < m->nmaster) {
 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
-			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), c->bw, 0);
+			resize(c, m->wx, m->wy + my, mw - (2*borderpx), h - (2*borderpx), borderpx, 0);
 			my += HEIGHT(c);
 		}
 		else {
 			h = (m->wh - ty) / (n - i);
-			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), c->bw, 0);
+			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*borderpx), h - (2*borderpx), borderpx, 0);
 			ty += HEIGHT(c);
 		}
-
-	for (c = selmon->clients; c; c = c->next)
-		if (ISVISIBLE(c) && c->bw == 0)
-			resize(c, c->x, c->y, c->w - 2*borderpx, c->h - 2*borderpx, borderpx, 0);
-
 }
 
 void
