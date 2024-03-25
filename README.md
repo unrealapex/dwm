@@ -15,7 +15,7 @@
 
 ### Install
 ```bash
-git clone https://github.com/unrealapex/dwm
+git clone https://git.sr.ht/~unrealapex/dwm
 cd dwm
 sudo make clean install
 ```
