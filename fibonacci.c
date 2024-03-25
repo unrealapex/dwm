@@ -7,48 +7,49 @@ fibonacci(Monitor *mon, int s) {
 	if(n == 0)
 		return;
 	
-	nx = mon->wx;
+	// FIXME: gap calculation is not that good
+	nx = mon->wx + gappx;
 	ny = 0;
-	nw = mon->ww;
-	nh = mon->wh;
+	nw = mon->ww - 2*gappx;
+	nh = mon->wh - 2*gappx;
 	
 	for(i = 0, c = nexttiled(mon->clients); c; c = nexttiled(c->next)) {
 		if((i % 2 && nh / 2 > 2 * c->bw)
 		   || (!(i % 2) && nw / 2 > 2 * c->bw)) {
 			if(i < n - 1) {
 				if(i % 2)
-					nh /= 2;
+					nh = (nh - gappx) / 2;
 				else
-					nw /= 2;
+					nw = (nw - gappx) / 2;
 				if((i % 4) == 2 && !s)
-					nx += nw;
+					nx += nw + gappx;
 				else if((i % 4) == 3 && !s)
-					ny += nh;
+					ny += nh + gappx;
 			}
 			if((i % 4) == 0) {
 				if(s)
-					ny += nh;
+					ny += nh + gappx;
 				else
-					ny -= nh;
+					ny -= nh + gappx;
 			}
 			else if((i % 4) == 1)
-				nx += nw;
+				nx += nw + gappx;
 			else if((i % 4) == 2)
-				ny += nh;
+				ny += nh + gappx;
 			else if((i % 4) == 3) {
 				if(s)
-					nx += nw;
+					nx += nw + gappx;
 				else
-					nx -= nw;
+					nx -= nw + gappx;
 			}
 			if(i == 0)
 			{
 				if(n != 1)
-					nw = mon->ww * mon->mfact;
-				ny = mon->wy;
+					nw = (mon->ww - 2*gappx - gappx) * mon->mfact;
+				ny = mon->wy + gappx;
 			}
 			else if(i == 1)
-				nw = mon->ww - nw;
+				nw = mon->ww - nw - gappx - 2*gappx;
 			i++;
 		}
 		resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, c->bw, 0);
