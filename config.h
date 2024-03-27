@@ -61,8 +61,6 @@ static const Rule rules[] = {
 	{ "obsidian", NULL,       NULL,       1 << 3,       1,              1,             0,          0,         -1 },
 	{ "steam",    NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
 	{ "Lutris",   NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
-	{ "firefox",       NULL,       "Mozilla Firefox Private Browsing", 1 << 7,        1,              0,             0,          1,         -1 }, 
-	{ "Google-chrome",       NULL,       "New Incognito Tab - Google Chrome", 1 << 7,        1,              0,             0,          1,         -1 }, 
 	{ "Spotify",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
 	{ "nuclear",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
 };
