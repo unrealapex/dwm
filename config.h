@@ -164,6 +164,8 @@ static const Key keys[] = {
 	// screenshot
 	{ ShiftMask,                    0xff61,    spawn,          {.v = screenshot_full_cmd } },
 	{ 0,                            0xff61,    spawn,          {.v = screenshot_select_cmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshot_full_cmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = screenshot_select_cmd } },
 	// volume
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = volume_up_cmd } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = volume_down_cmd } },
