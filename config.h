@@ -52,6 +52,7 @@ static const Rule rules[] = {
 	{ "discord",  NULL,       NULL,       0,            0,              1,             0,          0,         -1 },
 	{ "KeePassXC",NULL,       NULL,       0,            0,              1,             0,          0,         -1 },
 	{ "zoom",     NULL,       NULL,       0,            0,              1,             0,         -1,         -1 },
+	{ "zenity",   NULL,       NULL,       0,            0,              1,             0,         -1,         -1 },
 	{ "firefox",  NULL,       NULL,       1 << 1,       1,              0,             0,         -1,         -1 },
 	// NOTE: picture in picture is added to all tags
 	// TODO: set the window position to bottom right
