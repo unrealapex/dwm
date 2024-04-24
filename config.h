@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-// included patches: gaps, switchtotag
+// included patches: gaps
 
 #include <X11/XF86keysym.h>
 
@@ -43,27 +43,27 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     switchtotag     isfloating     isterminal  noswallow  monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,              1,             0,          0          -1 },
-	{ "st",       NULL,       NULL,       0,            0,              0,             1,          0,         -1 },
-	{ "wezterm",  NULL,       NULL,       0,            0,              0,             1,          0,         -1 },
+	/* class      instance    title       tags mask     isfloating     isterminal  noswallow  monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,             0,          0          -1 },
+	{ "st",       NULL,       NULL,       0,            0,             1,          0,         -1 },
+	{ "wezterm",  NULL,       NULL,       0,            0,             1,          0,         -1 },
 /* xev */
-	{ NULL,       NULL,       "Event Tester", 0,        0,              0,             0,          1,         -1 }, 
-	{ "discord",  NULL,       NULL,       0,            0,              1,             0,          0,         -1 },
-	{ "KeePassXC",NULL,       NULL,       0,            0,              1,             0,          0,         -1 },
-	{ "zoom",     NULL,       NULL,       0,            0,              1,             0,         -1,         -1 },
-	{ "zenity",   NULL,       NULL,       0,            0,              1,             0,         -1,         -1 },
-	{ "firefox",  NULL,       NULL,       1 << 1,       1,              0,             0,         -1,         -1 },
+	{ NULL,       NULL,       "Event Tester", 0,        0,             0,          1,         -1 }, 
+	{ "discord",  NULL,       NULL,       0,            1,             0,          0,         -1 },
+	{ "KeePassXC",NULL,       NULL,       0,            1,             0,          0,         -1 },
+	{ "zoom",     NULL,       NULL,       0,            1,             0,         -1,         -1 },
+	{ "zenity",   NULL,       NULL,       0,            1,             0,         -1,         -1 },
+	{ "firefox",  NULL,       NULL,       1 << 1,       0,             0,         -1,         -1 },
 	// NOTE: picture in picture is added to all tags
 	// TODO: set the window position to bottom right
-	{ "firefox",  "Toolkit",  "Picture-in-Picture", ~0,  0,              1,             0,         -1,         -1 },
-	{ "Google-chrome",  NULL, NULL,       1 << 1,       1,              0,             0,         -1,         -1 },
-	{ "Element",  NULL,       NULL,       1 << 2,       1,              1,             0,          0,         -1 },
-	{ "obsidian", NULL,       NULL,       1 << 3,       1,              1,             0,          0,         -1 },
-	{ "steam",    NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
-	{ "Lutris",   NULL,       NULL,       1 << 4,       1,              1,             0,          0,         -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
-	{ "nuclear",  NULL,       NULL,       1 << 8,       1,              0,             0,          0,         -1 },
+	{ "firefox",  "Toolkit",  "Picture-in-Picture", ~0,  1,             0,         -1,         -1 },
+	{ "Google-chrome",  NULL, NULL,       1 << 1,       0,             0,         -1,         -1 },
+	{ "Element",  NULL,       NULL,       1 << 2,       1,             0,          0,         -1 },
+	{ "obsidian", NULL,       NULL,       1 << 3,       1,             0,          0,         -1 },
+	{ "steam",    NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
+	{ "Lutris",   NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 8,       0,             0,          0,         -1 },
+	{ "nuclear",  NULL,       NULL,       1 << 8,       0,             0,          0,         -1 },
 };
 
 /* layout(s) */
