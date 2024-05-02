@@ -113,6 +113,7 @@ static const char *media_prev_cmd[] = {"playerctl", "previous", NULL};
 static const char *brightness_up_cmd[] = {"brightnessctl", "set", "+15%", NULL};
 static const char *brightness_down_cmd[] = {"brightnessctl", "set", "-15%", NULL};
 static const char *mic_mute_cmd[] = {"pactl", "set-source-mute", "toggle", NULL};
+static const char *input_switcher_cmd[] = {"input-switcher",  NULL};
 
 
 static const Key keys[] = {
@@ -134,8 +135,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	// { MODKEY,                       XK_space,  setlayout,      {0} },
+	// { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_space,  spawn,          {.v = input_switcher_cmd } },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
