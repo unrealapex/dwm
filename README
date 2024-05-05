@@ -12,12 +12,12 @@ Patches
 ------------
 - actualfullscreen
 - alwayscenter
+- fibonacci
 - moveresize
 - notitle
 - pertag
-- swallow
-- fibonacci
 - smartborders
+- swallow
 - tilegap
 
 
