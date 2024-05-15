@@ -109,9 +109,8 @@ static const char *volume_mute_cmd[]  = { "volumewizard", "mute", NULL };
 static const char *media_play_cmd[] = {"playerctl", "play-pause", NULL};
 static const char *media_next_cmd[] = {"playerctl", "next", NULL};
 static const char *media_prev_cmd[] = {"playerctl", "previous", NULL};
-// FIXME: this this
-static const char *brightness_up_cmd[] = {"brightnessctl", "set", "+15%", NULL};
-static const char *brightness_down_cmd[] = {"brightnessctl", "set", "-15%", NULL};
+static const char *brightness_up_cmd[] = {"xbacklight", "-inc", "15", NULL};
+static const char *brightness_down_cmd[] = {"xbacklight", "-dec", "15", NULL};
 static const char *mic_mute_cmd[] = {"pactl", "set-source-mute", "toggle", NULL};
 static const char *input_switcher_cmd[] = {"input-switcher",  NULL};
 
