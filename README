@@ -60,4 +60,13 @@ Configuration
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
 
+
+Updating
+-------------
+    git switch suckless
+    git pull git://git.suckless.org/dwm
+    git switch master
+    git rebase --rebase-merges  suckless
+
+
 .. vim: set filetype=rst
