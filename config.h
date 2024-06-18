@@ -49,7 +49,6 @@ static const Rule rules[] = {
 	{ "wezterm",  NULL,       NULL,       0,            0,             1,          0,         -1 },
 /* xev */
 	{ NULL,       NULL,       "Event Tester", 0,        0,             0,          1,         -1 }, 
-	{ "discord",  NULL,       NULL,       0,            1,             0,          0,         -1 },
 	{ "KeePassXC",NULL,       NULL,       0,            1,             0,          0,         -1 },
 	{ "zoom",     NULL,       NULL,       0,            1,             0,         -1,         -1 },
 	{ "zenity",   NULL,       NULL,       0,            1,             0,         -1,         -1 },
@@ -58,6 +57,7 @@ static const Rule rules[] = {
 	// TODO: set the window position to bottom right
 	{ "firefox",  "Toolkit",  "Picture-in-Picture", ~0,  1,             0,         -1,         -1 },
 	{ "Google-chrome",  NULL, NULL,       1 << 1,       0,             0,         -1,         -1 },
+	{ "discord",  NULL,       NULL,       1 << 2,       0,             0,          0,         -1 },
 	{ "Element",  NULL,       NULL,       1 << 2,       1,             0,          0,         -1 },
 	{ "obsidian", NULL,       NULL,       1 << 3,       1,             0,          0,         -1 },
 	{ "steam",    NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
