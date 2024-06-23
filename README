@@ -16,6 +16,7 @@ Patches
 - fixborders
 - movecenter
 - moveresize
+- movestack
 - notitle
 - pertag
 - smartborders
