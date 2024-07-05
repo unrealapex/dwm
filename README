@@ -19,6 +19,7 @@ Patches
 - movestack
 - notitle
 - pertag
+- preserveonrestart
 - smartborders
 - steam
 - swallow
