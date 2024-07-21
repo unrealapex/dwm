@@ -53,6 +53,7 @@ static const Rule rules[] = {
 	{ "zoom",     NULL,       NULL,       0,            1,             0,         -1,         -1 },
 	{ "zenity",   NULL,       NULL,       0,            1,             0,         -1,         -1 },
 	{ "firefox",  NULL,       NULL,       1 << 1,       0,             0,         -1,         -1 },
+	{ "LibreWolf",NULL,       NULL,       1 << 1,       0,             0,         -1,         -1 },
 	// NOTE: picture in picture is added to all tags
 	// TODO: set the window position to bottom right
 	{ "firefox",  "Toolkit",  "Picture-in-Picture", ~0,  1,             0,         -1,         -1 },
