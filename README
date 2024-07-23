@@ -17,7 +17,6 @@ Patches
 - movecenter
 - moveresize
 - movestack
-- notitle
 - pertag
 - preserveonrestart
 - smartborders
