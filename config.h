@@ -101,21 +101,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *lockcmd[]  = { "slock", NULL };
-// FIXME: figure out c naming scheme
-static const char *screenshot_full_cmd[]  = { "screenshot", "full", NULL };
-static const char *screenshot_select_cmd[]  = { "screenshot", "selection", NULL };
-static const char *emoji_picker_cmd[]  = { "emoji-picker", NULL };
-static const char *volume_up_cmd[]  = { "volumewizard", "up", NULL };
-static const char *volume_down_cmd[]  = { "volumewizard", "down", NULL };
-static const char *volume_mute_cmd[]  = { "volumewizard", "mute", NULL };
-static const char *media_play_cmd[] = {"playerctl", "play-pause", NULL};
-static const char *media_next_cmd[] = {"playerctl", "next", NULL};
-static const char *media_prev_cmd[] = {"playerctl", "previous", NULL};
-static const char *brightness_up_cmd[] = {"xbacklight", "-inc", "15", NULL};
-static const char *brightness_down_cmd[] = {"xbacklight", "-dec", "15", NULL};
-static const char *mic_mute_cmd[] = {"pactl", "set-source-mute", "toggle", NULL};
-
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -165,26 +150,26 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
 	// my own keybinds
 	// lock
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
-	// screenshot
-	{ ShiftMask,                    0xff61,    spawn,          {.v = screenshot_full_cmd } },
-	{ 0,                            0xff61,    spawn,          {.v = screenshot_select_cmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshot_full_cmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = screenshot_select_cmd } },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("slock") },
+// screenshot
+	{ ShiftMask,                    0xff61,    spawn,          SHCMD("screenshot full") },
+	{ 0,                            0xff61,    spawn,          SHCMD("screenshot select") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("screenshot full") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("screenshot select") },
 	// volume
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = volume_up_cmd } },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = volume_down_cmd } },
-	{ 0,                            XF86XK_AudioMute, spawn,          {.v = volume_mute_cmd } },
-	// media control
-	{ 0,                            XF86XK_AudioPlay, spawn,          {.v = media_play_cmd } },
-	{ 0,                            XF86XK_AudioNext, spawn,          {.v = media_next_cmd } },
-	{ 0,                            XF86XK_AudioPrev, spawn,          {.v = media_prev_cmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,   SHCMD("volumewizard up") },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,   SHCMD("volumewizard down") },
+	{ 0,                            XF86XK_AudioMute, spawn,          SHCMD("volumewizard mute") },
+// media control
+	{ 0,                            XF86XK_AudioPlay, spawn,          SHCMD("playerctl play-pause") },
+	{ 0,                            XF86XK_AudioNext, spawn,          SHCMD("playerctl next") },
+	{ 0,                            XF86XK_AudioPrev, spawn,          SHCMD("playerctl prev") },
 	// brightness
-	{ 0,                            XF86XK_MonBrightnessUp, spawn,         {.v = brightness_up_cmd } },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn,         {.v =  brightness_down_cmd } },
-	// mute mic
-	{ 0,                            XF86XK_AudioMicMute, spawn,         {.v = mic_mute_cmd } },
-	{ MODKEY,                       XK_period, spawn,       {.v = emoji_picker_cmd } },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn,  SHCMD("xbacklight -inc 15") },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn,  SHCMD("xbacklight -dec 15") },
+		// mute mic
+	{ 0,                            XF86XK_AudioMicMute,      spawn,  SHCMD("pactl set-source-mute toggle") },
+	{ MODKEY,                       XK_period, spawn,                 SHCMD("emoji-picker") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
