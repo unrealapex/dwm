@@ -170,7 +170,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,  SHCMD("xbacklight -dec 15") },
 		// mute mic
 	{ 0,                            XF86XK_AudioMicMute,      spawn,  SHCMD("pactl set-source-mute toggle") },
-	{ MODKEY,                       XK_period, spawn,                 SHCMD("emoji-picker") },
+	{ MODKEY,                       XK_period, spawn,                 SHCMD("dmenu_emoji") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
