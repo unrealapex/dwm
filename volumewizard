@@ -42,3 +42,4 @@ ${bold}Usage${reset}: volumewizard [up|down|mute]
 esac
 
 send_notification
+echo $volume
