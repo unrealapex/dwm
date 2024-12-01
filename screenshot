@@ -20,6 +20,7 @@ fi
 
 bold="\033[1m"
 reset="\033[m"
+# FIXME: use a better path nameing scheme
 image_path=$HOME/Pictures/Screenshots/Screenshot\ from\ $(date +%Y-%m-%d\ %H-%M-%S).png
 
 case $1 in
