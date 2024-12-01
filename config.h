@@ -65,6 +65,7 @@ static const Rule rules[] = {
 	{ "steam",    NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
 	{ "heroic",   NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
 	{ "Lutris",   NULL,       NULL,       1 << 4,       1,             0,          0,         -1 },
+	{ "OpenArena",NULL,       NULL,       1 << 5,       1,             0,          0,         -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 8,       0,             0,          0,         -1 },
 	{ "nuclear",  NULL,       NULL,       1 << 8,       0,             0,          0,         -1 },
 };
