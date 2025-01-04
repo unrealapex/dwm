@@ -1,5 +1,6 @@
 aaron's build of dwm
-============================
+====================
+
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
@@ -9,7 +10,7 @@ In order to build dwm you need the Xlib header files.
 
 
 Patches
-------------
+-------
 - actualfullscreen
 - alwayscenter
 - fibonacci
@@ -72,6 +73,3 @@ Updating
     git pull git://git.suckless.org/dwm
     git switch master
     git rebase --rebase-merges  suckless
-
-
-.. vim: set filetype=rst
